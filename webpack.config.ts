@@ -102,7 +102,7 @@ const config: Configuration = {
         from: './static',
         to: '',
       },
-    ]),
+    ]) as any,
   ],
 };
 

@@ -1,4 +1,5 @@
-import { createAction } from 'typesafe-actions';
+import { deprecated } from 'typesafe-actions';
+const { createAction } = deprecated;
 import { Channel } from '../types/global';
 import { DialogState } from '../reducers';
 

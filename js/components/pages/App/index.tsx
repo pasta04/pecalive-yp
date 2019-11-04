@@ -7,6 +7,8 @@ import Modal from '../../molecules/Modal';
 import { GlobalState, RootState } from '../../../reducers';
 import Dialog from '../../organisms/Dialog';
 import ChannelList from '../../organisms/ChannelList';
+import ChannelListMobile from '../../organisms/ChannelListMobile';
+import { Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,8 +34,14 @@ const App: React.SFC<PropsType> = (props: PropsType) => {
 
   return (
     <div>
-      {/* リスト */}
-      <ChannelList list={props.list} />
+      {/* スマホ */}
+      <Hidden mdUp>
+        <ChannelListMobile list={props.list} />
+      </Hidden>
+      {/* PC */}
+      <Hidden smDown>
+        <ChannelList list={props.list} />
+      </Hidden>
 
       {/* 通知系 */}
       <Dialog />
