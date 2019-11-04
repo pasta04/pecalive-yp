@@ -35,11 +35,11 @@ const App: React.SFC<PropsType> = (props: PropsType) => {
   return (
     <div>
       {/* スマホ */}
-      <Hidden mdUp>
+      <Hidden smUp>
         <ChannelListMobile list={props.list} />
       </Hidden>
       {/* PC */}
-      <Hidden smDown>
+      <Hidden xsDown>
         <ChannelList list={props.list} />
       </Hidden>
 
